@@ -8,6 +8,33 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  
+  <main>
+    <div class="form">
+      <textarea name="text" id="input" class="input"></textarea>
+      <button class="btn_send">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </main>
+  <script>
+    let input = document.querySelector('.input'),
+        btn = document.querySelector('.btn_send');
+    
+    const animationBtnSend = (parent, element, animationClass) => {
+      parent.addEventListener('input', () => {
+        if (parent.value.length !== 0) element.classList.add(animationClass);
+        else element.classList.remove(animationClass);
+        console.log(parent.value);
+      });
+      element.addEventListener('click', () => {
+        element.classList.remove(animationClass);
+        parent.value = '';
+      });
+    };
+    
+    animationBtnSend(input, btn, 'btn_arrow');
+  </script>
 </body>
 </html>
