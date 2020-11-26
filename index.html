@@ -20,13 +20,14 @@
   </main>
   <script>
     let input = document.querySelector('.input'),
-        btn = document.querySelector('.btn_send');
+      btn = document.querySelector('.btn_send');
     
     const animationBtnSend = (parent, element, animationClass) => {
-      parent.addEventListener('input', () => {
-        if (parent.value.length !== 0) element.classList.add(animationClass);
-        else element.classList.remove(animationClass);
-        console.log(parent.value);
+      parent.addEventListener('focus', (event) => {
+        element.classList.add(animationClass);
+      });
+      parent.addEventListener('blur', (event) => {
+        if (parent.value.length === 0) element.classList.remove(animationClass);
       });
       element.addEventListener('click', () => {
         element.classList.remove(animationClass);
