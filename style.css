@@ -36,7 +36,7 @@ main {
   box-sizing: border-box;
 }
 
-.input {
+.textarea {
   display: block;
   width: 100%;
   height: 80px;
@@ -55,10 +55,14 @@ main {
   transition: border-color .5s;
 }
 
-.input:focus {
+.textarea:focus {
   outline: none;
   border-color: #21DBCD
 }
+
+/* Оформление кнопки и ее состояний
+   Кнопка абсолютно спозиционирована в блоке 
+   Классы CSS для поля ввода никак не влияют на анимацию кнопки */
 
 .btn_send {
   position: absolute;
@@ -89,6 +93,8 @@ main {
 .btn_send:focus {
   outline: none;
 }
+
+/* Белые полоски в кнопке, которые анимируются */
 
 .btn_send span {
   position: absolute;
@@ -125,6 +131,8 @@ main {
   -ms-transform-origin: bottom right;
   transform-origin: bottom right;
 }
+
+/* Класс анимации .btn_arrow. Добавляется с помощью JS. */
 
 .btn_send.btn_arrow span:first-child,
 .btn_send.btn_arrow span:last-child {
